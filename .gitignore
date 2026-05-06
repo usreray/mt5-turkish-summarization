@@ -1,0 +1,20 @@
+# Virtual environments
+venv/
+.venv/
+
+# Model weights and training checkpoints (too large for GitHub)
+final_model/
+mt5_turkish_summarization_run/
+*.safetensors
+*.bin
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
