@@ -2,7 +2,8 @@ from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, Seq2SeqTrainingArguments, Seq2SeqTrainer, DataCollatorForSeq2Seq
 
 print("Loading MLSUM Turkish dataset...")
-dataset = load_dataset("mlsum", "tu", trust_remote_code=True)
+# datasets 4.x no longer runs loading scripts, so use the Parquet conversion of MLSUM
+dataset = load_dataset("reciTAL/mlsum", revision="refs/convert/parquet", data_dir="tu")
 
 model_checkpoint = "google/mt5-small"
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
