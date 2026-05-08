@@ -1,5 +1,9 @@
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+import sys
 import torch
+
+# Windows consoles default to a code page that cannot print Turkish characters
+sys.stdout.reconfigure(encoding="utf-8")
 
 model_path = "./final_model"
 tokenizer = AutoTokenizer.from_pretrained(model_path)
